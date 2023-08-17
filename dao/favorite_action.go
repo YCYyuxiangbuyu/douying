@@ -15,7 +15,7 @@ func (FavoriteActionDao) CreateFavorite(userID int64, videoID int64) (err error)
 		VideoID: videoID,
 	}).Error
 
-	if err != nil {
+	if err != nil { //
 		global.Log.Error("FavoriteActionDao.CreateFavorite USE global.DB.Create ERROR", zap.Error(err))
 		return err
 	}

@@ -15,7 +15,7 @@ func (FavoriteActionService) FavoriteActionClick(UserID int64, VideoID int64, Ac
 		b, err := dao.DaoGroupApp.FavoriteActiontDao.QueryFavoriteBYyUVid(UserID, VideoID)
 		if err != nil {
 			global.Log.Error("service 点赞前先查询失败", zap.Error(err))
-			return err
+			return err //
 		}
 		if b {
 			fmt.Println("已经点过赞")

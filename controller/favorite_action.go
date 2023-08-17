@@ -17,7 +17,7 @@ func (FavoriteActionController) FavoriteActionView(c *gin.Context) {
 	// 获取token和title
 	var cr request.FavoriteActionRequest
 	if err := c.ShouldBindQuery(&cr); err != nil {
-		global.Log.Error(" FavoriteListRequest参数错误", zap.Error(err))
+		global.Log.Error(" FavoriteListRequest参数错误", zap.Error(err)) //
 	}
 	/*{
 		var structt = jwt.PayLoad{}
@@ -35,7 +35,7 @@ func (FavoriteActionController) FavoriteActionView(c *gin.Context) {
 		}
 		fmt.Println(result.PayLoad)
 	}
-	*///生成tkoen用来测试
+	*/ //生成tkoen用来测试
 
 	claim, err := jwt.ParseToken(cr.Token)
 	if err != nil {
@@ -57,7 +57,7 @@ func (FavoriteActionController) FavoriteActionView(c *gin.Context) {
 	UserID := ClaimResultTpye.PayLoad.UserID
 	VideoID := cr.VideoID
 	AtcionType := cr.ActionType
-	
+
 	//点赞业务处理
 	errr := FavoriteActionSer.FavoriteActionClick(UserID, VideoID, AtcionType) //
 	if errr != nil {

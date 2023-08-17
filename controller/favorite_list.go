@@ -21,7 +21,7 @@ func (FavoriteListController) FavoriteListView(c *gin.Context) {
 	/*claim, err := jwt.parseToken(cr.Token)
 	if err != nil {
 		global.Log.Error("token 错误", zap.Error(err))
-		c.JSON(http.StatusOK, response.Response{
+		c.JSON(http.StatusOK, response.Response{//
 		StatusCode: global.ERROR,
 			StatusMsg:  "token 错误",
 		})

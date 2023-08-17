@@ -14,7 +14,7 @@ func (FavoriteListDao) QueryVideoIdByUserId(UserId int64) ([]int64, error) { //�
 	var DaoFavoriteID []int64
 	var DaoFavorite []models.FavoriteModel                           //保存查询到的结果结构体
 	err := global.DB.Where("user_id = ?", UserId).Find(&DaoFavorite) //按照时间排序 不会写
-	if err.Error != nil {
+	if err.Error != nil {                                            //
 		fmt.Println("dao查询喜欢列表返回视频id切片失败", err)
 	}
 	for i := 0; i < len(DaoFavorite); i++ { //从结构体里面视频id
