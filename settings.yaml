@@ -14,7 +14,7 @@ zap:
 redis:
   host: "127.0.0.1"
   port: 6379
-  password: "123456"
+  password: ""
   pool_size: 100
   db: 6
 mysql:
@@ -22,8 +22,8 @@ mysql:
   port: 3306
   config: "charset=utf8mb4&parseTime=True&loc=Local"
   user: "root"
-  password: "123456"
-  db_name: "douyin"
+  password: "1999ycy1030"
+  db_name: "douyin1120"
   log_level: "error"
   max_idle_conns: 10
   max_open_conns: 100

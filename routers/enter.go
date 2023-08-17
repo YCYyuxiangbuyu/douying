@@ -16,7 +16,7 @@ func InitRouter() *gin.Engine {
 
 	gin.SetMode(global.Config.SystemConf.Env)
 	router := gin.Default()
-	router.Use(middleware.GinLogger(), middleware.GinRecovery(true))
+	router.Use(middleware.GinLogger(), middleware.GinRecovery(true)) //全局注册
 
 	router.POST("/videos", controller.ControllerGroupApp.VideoController.UploadVideoView)
 

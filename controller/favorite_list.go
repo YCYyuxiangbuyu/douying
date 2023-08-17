@@ -13,7 +13,7 @@ import (
 type FavoriteListController struct{}
 
 func (FavoriteListController) FavoriteListView(c *gin.Context) {
-	// 获取token和title
+	//
 	var cr request.FavoriteListRequest
 	if err := c.ShouldBindQuery(&cr); err != nil {
 		global.Log.Error(" FavoriteListRequest参数错误", zap.Error(err))
@@ -21,7 +21,7 @@ func (FavoriteListController) FavoriteListView(c *gin.Context) {
 	/*claim, err := jwt.parseToken(cr.Token)
 	if err != nil {
 		global.Log.Error("token 错误", zap.Error(err))
-		c.JSON(http.StatusOK, response.Response{
+		c.JSON(http.StatusOK, response.Response{//
 		StatusCode: global.ERROR,
 			StatusMsg:  "token 错误",
 		})
@@ -37,6 +37,8 @@ func (FavoriteListController) FavoriteListView(c *gin.Context) {
 
 	//var UserID int64 = 10 //测试
 	UserID := cr.FavoriteListRequestId
+	println("id is")
+	println(UserID)
 	// 获取点赞列表业务处理
 	FoundR, err := FavoriteListSer.FavoriteList(UserID) //FoundR 对应文档要返回的结构体
 	// 获取点赞列表业务处理

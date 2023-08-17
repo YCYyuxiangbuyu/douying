@@ -3,8 +3,8 @@ package config
 import "fmt"
 
 type MysqlConf struct {
-	Host         string `json:"host" mapstructure:"host"`
-	Port         int    `json:"port" mapstructure:"port"`
+	Host         string `json:"host" mapstructure:"host"` // mapstructure标签用在viper 做Unmarshal的时候
+	Port         int    `json:"port" mapstructure:"port"` //go语言标签用作指定相应动作时的键值
 	Config       string `json:"config" mapstructure:"config"`
 	User         string `json:"user" mapstructure:"user"`
 	Password     string `json:"password" mapstructure:"password"`

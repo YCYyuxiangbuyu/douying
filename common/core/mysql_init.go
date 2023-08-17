@@ -37,4 +37,5 @@ func InitMysql(cfg config.MysqlConf) {
 	sqlDB.SetMaxOpenConns(cfg.MaxOpenConns) // 连接池最大打开连接数
 	sqlDB.SetConnMaxLifetime(time.Hour * 4) //数据库连接的最大生存时间
 	global.DB = db
+	InitMysqlTable()
 }

@@ -7,8 +7,8 @@ import (
 )
 
 func InitMysqlTable() (err error) {
-	err = global.DB.Set("gorm:table_options", "ENGINE=InnoDB").
-		AutoMigrate(
+	err = global.DB.Set("gorm:table_options", "ENGINE=InnoDB"). //引擎选择
+									AutoMigrate(
 			&models.VideoModel{},
 			&models.CommentModel{},
 			&models.FavoriteModel{},
