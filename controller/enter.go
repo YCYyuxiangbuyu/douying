@@ -5,8 +5,11 @@ type ControllerGroup struct {
 	UserRegisterContoller    UserRegisterContoller
 	UserVedioListController  UserVedioListController
 	MessageController        MessageController
+	FollowContoller          FollowContoller
+	FollowListContoller      FollowListController
 	FavoriteListController   FavoriteListController
-	FavoriteActionController FavoriteActionController //
+	FavoriteActionController FavoriteActionController
+	CommentController        CommentController
 }
 
 var ControllerGroupApp = new(ControllerGroup)
